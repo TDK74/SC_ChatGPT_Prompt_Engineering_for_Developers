@@ -31,11 +31,13 @@ text = f"""
         and context for the model, which can lead to \ 
         more detailed and relevant outputs.
         """
+
 prompt = f"""
         Summarize the text delimited by triple backticks \ 
         into a single sentence.
         ```{text}```
         """
+
 response = get_completion(prompt)
 print(response)
 
@@ -46,6 +48,7 @@ prompt = f"""
         Provide them in JSON format with the following keys: 
         book_id, title, author, genre.
         """
+
 response = get_completion(prompt)
 print(response)
 
@@ -61,6 +64,7 @@ text_1 = f"""
         And that's it! You've got yourself a delicious \ 
         cup of tea to enjoy.
         """
+
 prompt = f"""
         You will be provided with text delimited by triple quotes. 
         If it contains a sequence of instructions, \ 
@@ -76,6 +80,7 @@ prompt = f"""
 
         \"\"\"{text_1}\"\"\"
         """
+
 response = get_completion(prompt)
 print("Completion for Text 1: ")
 print(response)
@@ -92,6 +97,7 @@ text_2 = f"""
         perfect day to spend time outdoors and appreciate the \ 
         beauty of nature.
         """
+
 prompt = f"""
         You will be provided with text delimited by triple quotes. 
         If it contains a sequence of instructions, \ 
@@ -107,6 +113,7 @@ prompt = f"""
 
         \"\"\"{text_2}\"\"\"
         """
+
 response = get_completion(prompt)
 print("Completion for Text 2: ")
 print(response)
@@ -124,6 +131,7 @@ prompt = f"""
 
         <child>: Teach me about resilience.
         """
+
 response = get_completion(prompt)
 print(response)
 
@@ -139,7 +147,7 @@ text = f"""
         their adventurous spirits remained undimmed, and they \ 
         continued exploring with delight.
         """
-# example 1
+
 prompt_1 = f"""
             Perform the following actions: 
             1 - Summarize the following text delimited by triple \
@@ -154,6 +162,7 @@ prompt_1 = f"""
             Text:
             ```{text}```
             """
+
 response = get_completion(prompt_1)
 print("Completion for prompt 1: ")
 print(response)
@@ -177,6 +186,112 @@ prompt_2 = f"""
 
             Text: <{text}>
             """
+
 response = get_completion(prompt_2)
 print("\nCompletion for prompt 2: ")
+print(response)
+
+## ------------------------------------------------------##
+prompt = f"""
+        Determine if the student's solution is correct or not.
+
+        Question:
+        I'm building a solar power installation and I need \
+         help working out the financials. 
+        - Land costs $100 / square foot
+        - I can buy solar panels for $250 / square foot
+        - I negotiated a contract for maintenance that will cost \ 
+        me a flat $100k per year, and an additional $10 / square \
+        foot
+        What is the total cost for the first year of operations 
+        as a function of the number of square feet.
+
+        Student's Solution:
+        Let x be the size of the installation in square feet.
+        Costs:
+        1. Land cost: 100x
+        2. Solar panel cost: 250x
+        3. Maintenance cost: 100,000 + 100x
+        Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
+        """
+
+response = get_completion(prompt)
+print(response)
+
+## ------------------------------------------------------##
+prompt = f"""
+        Your task is to determine if the student's solution \
+        is correct or not.
+        To solve the problem do the following:
+        - First, work out your own solution to the problem including the final total. 
+        - Then compare your solution to the student's solution \ 
+        and evaluate if the student's solution is correct or not. 
+        Don't decide if the student's solution is correct until 
+        you have done the problem yourself.
+
+        Use the following format:
+        Question:
+        ```
+        question here
+        ```
+        Student's solution:
+        ```
+        student's solution here
+        ```
+        Actual solution:
+        ```
+        steps to work out the solution and your solution here
+        ```
+        Is the student's solution the same as actual solution \
+        just calculated:
+        ```
+        yes or no
+        ```
+        Student grade:
+        ```
+        correct or incorrect
+        ```
+
+        Question:
+        ```
+        I'm building a solar power installation and I need help \
+        working out the financials. 
+        - Land costs $100 / square foot
+        - I can buy solar panels for $250 / square foot
+        - I negotiated a contract for maintenance that will cost \
+        me a flat $100k per year, and an additional $10 / square \
+        foot
+        What is the total cost for the first year of operations \
+        as a function of the number of square feet.
+        ``` 
+        Student's solution:
+        ```
+        Let x be the size of the installation in square feet.
+        Costs:
+        1. Land cost: 100x
+        2. Solar panel cost: 250x
+        3. Maintenance cost: 100,000 + 100x
+        Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
+        ```
+        Actual solution:
+        """
+
+response = get_completion(prompt)
+print(response)
+
+## ------------------------------------------------------##
+prompt = f"""
+        Tell me about AeroGlide UltraSlim Smart Toothbrush by Boie
+        """
+
+response = get_completion(prompt)
+print(response)
+
+## ------------------------------------------------------##
+prompt = f"""
+        Tell me about Dave Aguilar climbing \
+        the Golden Gate bridge back in 80es.
+        """
+
+response = get_completion(prompt)
 print(response)
