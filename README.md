@@ -1,9 +1,9 @@
 # Short Course: ChatGPT Prompt Engineering for Developers
 
 ### Acknowledgments
-The Python code is from the short course "ChatGPT Prompt Engineering for Developers" on the DeepLearning.AI platform, available for free.  
+The Python code is from the short course "ChatGPT Prompt Engineering for Developers" on the DeepLearning.AI platform. The course content is available for free, while the certificate and graded assessments require a paid subscription.  
 For more details, visit:  
-<https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/>
+<https://learn.deeplearning.ai/courses/chatgpt-prompt-engineering-for-developers/information/>
 
 ### Description
 This repository contains only Python code from my practice after each lesson.  
